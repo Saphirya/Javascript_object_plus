@@ -6,13 +6,19 @@ const obj = {
 // console.log(Object.values(obj));
 // console.log(Object.entries(obj));
 
-Object.defineProperty(obj, "test", {});
+// Object.defineProperties(obj, {
+//   test: {
+//     value: "value3",
+//     writable: true,
+//     enumerable: true,
+//   },
+// });
 
 // Object.defineProperty(obj, "key", {
 //   writable: true,
 // });
 
-const descriptor = Object.getOwnPropertyDescriptor(obj, "test");
+const descriptor = Object.getOwnPropertyDescriptors(obj);
 console.log(descriptor);
 
 // for (let key in obj) {
