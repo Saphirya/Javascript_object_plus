@@ -6,17 +6,24 @@ const vehicule = {
   },
 };
 
-const car = {
-  brand: "renault",
-};
+function Car(brand) {
+  this.brand = brand;
+}
+// Car.prototype = vehicule;
 
-car.__proto__ = vehicule;
-car.hasEngine = false;
+Car.prototype = vehicule;
+Car.prototype.constructor = Car;
+const mycar = new Car("renault");
+
+console.log(mycar);
+
+// car.__proto__ = vehicule;
+// car.hasEngine = false;
 
 // console.log(car);
 // console.log(car.hasEngine);
 
-for (let key in car) {
-  console.log(car.hasOwnProperty(key));
-  console.log(key);
-}
+// for (let key in car) {
+//   console.log(car.hasOwnProperty(key));
+//   console.log(key);
+// }
